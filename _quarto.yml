@@ -1,0 +1,26 @@
+project:
+    type: book
+    output-dir: __output
+
+bibliography: references.bib
+
+
+book:
+    title: "Hitchhikers guide to transparent, reproducible, and collaborative computational science"
+    output-file: "HG2trcCS"
+    author: "Wolfram Barfuss"
+    date: today
+    chapters:
+        - index.ipynb
+        - 002ScholarlyWriting.ipynb
+        - 003ComputationalWriting.ipynb
+        - HeavyComputations.ipynb
+        
+format:
+  html:
+    theme: cosmo
+    notebook-links: inline
+    number-depth: 2
+  pdf:
+    documentclass: scrreprt
+    number-depth: 2
