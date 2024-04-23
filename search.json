@@ -1,0 +1,162 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hitchhikers guide to transparent, reproducible, and collaborative computational science",
+    "section": "",
+    "text": "Science as amateur software development",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why this guide?</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#tools-how-do-we-get-it",
+    "href": "index.html#tools-how-do-we-get-it",
+    "title": "Hitchhikers guide to transparent, reproducible, and collaborative computational science",
+    "section": "Tools: How do we get it?",
+    "text": "Tools: How do we get it?\n\nJupyter notebooks\nquarto\nnbdev\nJupyter lab (extensions)\ngit & github",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why this guide?</span>"
+    ]
+  },
+  {
+    "objectID": "002ScholarlyWriting.html",
+    "href": "002ScholarlyWriting.html",
+    "title": "2  Scholarly writing",
+    "section": "",
+    "text": "2.1 Narrative text with images and equations\nWriting text is obvious and follows basic markdown syntax. More information about that is in the Quarto documentation.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Scholarly writing</span>"
+    ]
+  },
+  {
+    "objectID": "002ScholarlyWriting.html#sec-text",
+    "href": "002ScholarlyWriting.html#sec-text",
+    "title": "2  Scholarly writing",
+    "section": "",
+    "text": "Images\nTo include images, standard markdown syntax works well\n![Abstract Shape](graphics/drawing.svg)\n\n\n\nAbstract Shape\n\n\nI recommend working with vector graphics (.svg files). They do not require an additional raw file, which keeps the project folder clean. Inkscape is a great open-source vector graphics program.\nQuarto offers more customization options to images, such as downscaling the image size or specifying the figure alignment,\n![Abstract Shape](graphics/drawing.svg){width=50%, fig-align=\"right\"}\nwhich results in\n\n\n\nSmall Abstract Shape\n\n\nHowever, these additions to the standard markdown syntax are Quarto-specific, which get rendered in the output files produced by Quarto, but not necessarily while displaying the raw Jupyter notebook.\n\n\n\n\n\n\nNote\n\n\n\nBy adopting a large-to-small width-to-length ratio for our raw images, such as 16-to-9, we can prioritize transparency, collaboration, and reproducibility. This approach allows us to cleanly display our Jupyter notebooks in other places, such as GitHub, NBViewer, or Google Colab.\n\n\n\n\nEquations\nEquations follow standard LaTeX syntax, inline by $ ... $ or in full display by\n$$ ... $$\nFor example, \\(E=mc^2\\), or\n\\[\nE=mc^2\n\\tag{2.1}\\]\n\n\n\n\n\n\nNote\n\n\n\nSometimes, the JuptyerLab Quarto extension has problems rendering equations in my setup. I haven’t understood the exact cause of this behavior yet. Reloading the python environment did the trick (once). However, when using the LaTex align environment for more complex equations, I couldn’t get the Quarto extension to display it correctly. To get most of the other displaying features, I can recommend the MyST Jupyter extension as an alternative.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Scholarly writing</span>"
+    ]
+  },
+  {
+    "objectID": "002ScholarlyWriting.html#cross-references",
+    "href": "002ScholarlyWriting.html#cross-references",
+    "title": "2  Scholarly writing",
+    "section": "2.2 Cross-references",
+    "text": "2.2 Cross-references\nCross-references help readers navigate your document by providing numbered references and hyperlinks to entities like figures and tables. Each entity needs a unique label, e.g. #fig-element, to be cross-referenced.\n\nFigures\nFigure receive a label by, for example,\n![Referenced Abstract Shape](graphics/drawing.svg){#fig-shape}\n\n\n\n\n\n\nFigure 2.1: Referenced Abstract Shape\n\n\n\nThe #fig-shape label makes the figure referenceable.\nSee @fig-shape for an illustration.\nSee Figure 2.1 for an illustration.\n\n\nSections\nTo reference a section, add a #sec- identifier to any heading. For example:\nSee @sec-text for additional context.\nSee Section 2.1 for additional context.\n\n\nEquations\nTo reference an equation, add a #eq- identifier to any display equation. For example:\n$$\n...\n$$ {#eq-einstein}\nSee Equation 2.1 for additional context.\n\n\nFootnotes\nFootnotes can be specified using the following syntax:\nHere is a footnote reference,[^1] and another.[^longnote]\n\n[^1]: Here is the footnote.\n\n[^longnote]: Here's one with multiple blocks.\n\n    Subsequent paragraphs are indented to show that they\nbelong to the previous footnote.\n\n        { some.code }\n\n    The whole paragraph can be indented, or just the first\n    line.  In this way, multi-paragraph footnotes work like\n    multi-paragraph list items.\n\nThis paragraph won't be part of the note, because it\nisn't indented.\nHere is a footnote reference,1 and another.2\nThis paragraph won’t be part of the note, because it isn’t indented.\nFootnotes can be a preferable way to specify links to webpages 3 to ensure that people notice and can follow the link, even if the output format is a printed PDF.\n\n\n\n\n\n\nWarning\n\n\n\nNote that the cross-referencing syntax is Quarto-specific and makes Jupyter notebooks display less cleanly in other environments. But the intrusions are not huge (imo).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Scholarly writing</span>"
+    ]
+  },
+  {
+    "objectID": "002ScholarlyWriting.html#citations",
+    "href": "002ScholarlyWriting.html#citations",
+    "title": "2  Scholarly writing",
+    "section": "2.3 Citations",
+    "text": "2.3 Citations\nCiting other scholars’ work is a fundamental part of any scholarly written piece.\n\nBibliography files\nQuarto supports bibliography files in a wide variety of formats. For example, add a bibliography file to your document in the YAML metadata as follows,\n---\nbibliography: references.bib\n---\nThe file references.bib must be in the same folder as your Jupyter notebook. In our case it contains the following,\n\n!cat references.bib\n\n@article{BarfussEtAl2020,\n  title = {Caring for the Future Can Turn Tragedy into Comedy for Long-Term Collective Action under Risk of Collapse},\n  author = {Barfuss, Wolfram and Donges, Jonathan F. and Vasconcelos, V{\\'i}tor V. and Kurths, J{\\\"u}rgen and Levin, Simon A.},\n  year = {2020},\n  journal = {Proceedings of the National Academy of Sciences},\n  volume = {117},\n  number = {23},\n  pages = {12915--12922},\n  publisher = {Proceedings of the National Academy of Sciences},\n  doi = {10.1073/pnas.1916545117},\n  url = {https://www.pnas.org/doi/abs/10.1073/pnas.1916545117},\n  urldate = {2022-03-10},\n  copyright = {All rights reserved}\n}\n\n@article{Barfuss2022,\n  title = {Dynamical Systems as a Level of Cognitive Analysis of Multi-Agent Learning},\n  author = {Barfuss, Wolfram},\n  year = {2022},\n  journal = {Neural Computing and Applications},\n  volume = {34},\n  number = {3},\n  pages = {1653--1671},\n  issn = {1433-3058},\n  doi = {10.1007/s00521-021-06117-0},\n  url = {https://doi.org/10.1007/s00521-021-06117-0},\n  urldate = {2023-03-02},\n  copyright = {All rights reserved}\n}\n\n\n\n\nCitations syntax\nCitations go inside square brackets and are separated by semicolons, e.g.,\nvery important finding [see @BarfussEtAl2020, pp. 2-3; also @Barfuss2022, Sec. 1]\nvery important finding (see Barfuss et al. 2020, 2–3; also Barfuss 2022, sec. 2)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Scholarly writing</span>"
+    ]
+  },
+  {
+    "objectID": "002ScholarlyWriting.html#document-metadata",
+    "href": "002ScholarlyWriting.html#document-metadata",
+    "title": "2  Scholarly writing",
+    "section": "2.4 Document metadata",
+    "text": "2.4 Document metadata\nDocument details can be given via a so-called YAML frontmatter.\n---\ntitle: \"Scholarly writing\"\nauthor: \n    - name: \"Wolfram Barfuss\"\n    - affiliation: \"University of Bonn\"\n---\nMore information on the Quarto Documentation.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Scholarly writing</span>"
+    ]
+  },
+  {
+    "objectID": "002ScholarlyWriting.html#generating-output",
+    "href": "002ScholarlyWriting.html#generating-output",
+    "title": "2  Scholarly writing",
+    "section": "2.5 Generating output",
+    "text": "2.5 Generating output\nTo render this notebook as a standalone file we give it further metadata:\n---\nbibliography: references.bib\nformat: \n    pdf:\n        link-citations: true\n---\nMoreover, it must not be part of a project. So we copy it, render the copy, and the remove all unnecessary copies.\n\n!cp 002ScholarlyWriting.ipynb 002ScholarlyWriting_.ipynb\n!quarto render 002ScholarlyWriting_.ipynb --to pdf\n!mv 002ScholarlyWriting_.pdf __output/002ScholarlyWriting.pdf\n!rm -r 002ScholarlyWriting_*",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Scholarly writing</span>"
+    ]
+  },
+  {
+    "objectID": "002ScholarlyWriting.html#references",
+    "href": "002ScholarlyWriting.html#references",
+    "title": "2  Scholarly writing",
+    "section": "2.6 References",
+    "text": "2.6 References\n\n\n\n\nBarfuss, Wolfram. 2022. “Dynamical Systems as a Level of Cognitive Analysis of Multi-Agent Learning.” Neural Computing and Applications 34 (3): 1653–71. https://doi.org/10.1007/s00521-021-06117-0.\n\n\nBarfuss, Wolfram, Jonathan F. Donges, Vítor V. Vasconcelos, Jürgen Kurths, and Simon A. Levin. 2020. “Caring for the Future Can Turn Tragedy into Comedy for Long-Term Collective Action Under Risk of Collapse.” Proceedings of the National Academy of Sciences 117 (23): 12915–22. https://doi.org/10.1073/pnas.1916545117.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Scholarly writing</span>"
+    ]
+  },
+  {
+    "objectID": "002ScholarlyWriting.html#footnotes",
+    "href": "002ScholarlyWriting.html#footnotes",
+    "title": "2  Scholarly writing",
+    "section": "",
+    "text": "Here is the footnote.↩︎\nHere’s one with multiple blocks.\nSubsequent paragraphs are indented to show that they belong to the previous footnote.\n{ some.code }\nThe whole paragraph can be indented, or just the first line. In this way, multi-paragraph footnotes work like multi-paragraph list items.↩︎\nhttps://quarto.org/↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Scholarly writing</span>"
+    ]
+  },
+  {
+    "objectID": "003ComputationalWriting.html",
+    "href": "003ComputationalWriting.html",
+    "title": "3  Computational writing",
+    "section": "",
+    "text": "3.1 Basic example: predator-prey dynamics\nLet’s assume we want to study predator-prey dynamics in ecology. The predator-prey equations are a famous model showing that species population sizes do not have to be stable, even in equilibrium. Instead, they can continuously oscillate.\nMathematically, we express the model as follows:\nLet \\(x_t \\in \\mathbb R\\) be the number of prey and \\(y_t \\in\\mathbb R\\) the number of predators in the population at time step \\(t\\). They evolve according to\n\\[\\begin{align}\nx_{t+1} - x_{t} =: \\Delta x =  \\alpha x_t - \\beta x_t y_t \\\\\ny_{t+1} - y_{t} =: \\Delta y =  \\gamma y_t x_t - \\delta y_t\n\\end{align}\\]\nwhere the parameter \\(\\alpha\\) represents the preys’ birth rate, \\(\\beta\\) the prey’s mortality rate, \\(\\gamma\\) the predator efficiency, and \\(\\delta\\) the predators’ death rate.\nRight below the mathematical model, we define the computational model:\ndef predprey_model(prey_birth_rate, \n                   prey_mortality, \n                   predator_efficiency, \n                   predator_death_rate,\n                   initial_prey, \n                   initial_predators,\n                   time_length):\n    \"\"\" Discrete-time predator-prey model. \"\"\"\n    x = -1 * np.ones(time_length)\n    y = -1 * np.ones(time_length)\n    x[0] = initial_prey\n    y[0] = initial_predators\n    for t in range(1, time_length):\n        x[t] = x[t-1] + prey_birth_rate * x[t-1]\\\n            - prey_mortality * y[t-1]*x[t-1]\n        y[t] = y[t-1] + predator_efficiency * y[t-1]*x[t-1]\\\n            - predator_death_rate * y[t-1]\n    return x, y\nWe test the model,\npreys, predators = predprey_model(0.1, 0.1, 0.1, 0.01, 1.0, 1.0, 1000)\nand portray the model output, make the Figure referenceable in by using the Quarto comment commands\nplt.plot(preys, label=\"preys\", color='blue') \nplt.plot(predators, label=\"predators\", color='orange')\nplt.legend();\n\n\n\n\n\n\n\nFigure 3.1: An exemplary predator-prey model run.\nFigure 3.1 shows an exemplary predator-prey model run.\nHowever, often model code and analysis are too complex to be presented in a single notebook. There a two ways to deal with this problem: Quarto embeds and reusing code written in a notebook with nbdev.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Computational writing</span>"
+    ]
+  },
+  {
+    "objectID": "003ComputationalWriting.html#basic-example-predator-prey-dynamics",
+    "href": "003ComputationalWriting.html#basic-example-predator-prey-dynamics",
+    "title": "3  Computational writing",
+    "section": "",
+    "text": "#| label: fig-modelrun\n#| fig-cap: \"An exemplary predator-prey model run\"\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis basic form of computational writing is the most transparency, collaboration, and reproducibility friednly. This approach allows us to cleanly display our Jupyter notebooks in other places, such as GitHub, NBViewer, or Google Colab.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Computational writing</span>"
+    ]
+  },
+  {
+    "objectID": "003ComputationalWriting.html#quarto-embeds",
+    "href": "003ComputationalWriting.html#quarto-embeds",
+    "title": "3  Computational writing",
+    "section": "3.2 Quarto embeds",
+    "text": "3.2 Quarto embeds\nQuarto lets you embed the output of another document with the embed shortcode. To do this, simply provide the document path and block or cell identifier, e.g,\n{{&lt; embed HeavyComputations.ipynb#fig-scatter-plot &gt;}}\n\n\n\n\n\n\n\n\n\nFigure 3.2\n\n\n\n\n\n\nFigure 4.1 shows a heavy scatter plot.\n\n\n\n\n\n\nNote\n\n\n\nQuarto embeds can be a great and easy way to structure a project without using an additional tool. However, the Quarto embeds won’t show in any other Jupyter environment.\n\n\nAnother strategy is to reuse code written in a notebook with nbdev.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Computational writing</span>"
+    ]
+  },
+  {
+    "objectID": "003ComputationalWriting.html#code-reuse-with-nbdev",
+    "href": "003ComputationalWriting.html#code-reuse-with-nbdev",
+    "title": "3  Computational writing",
+    "section": "3.3 Code reuse with nbdev",
+    "text": "3.3 Code reuse with nbdev\nThis part makes use of the excellent nbdev Python package 1. nbdev provides a ready-to-use ecosystem for creating software packages with Jupyter Notebooks, i.e., writing, testing, documenting, and distributing. We use it, for example, here 2. For our computational writing experience, however, we resort to individual components of nbdev.\nSee nbdev’s getting-started guide 3 for how to install it.\nOne of the key features of nbdev is that it lets you export specific Jupyter Notebook cells to a plain Python file. These Python files can then be easily imported into other Jupyter Notebooks.\nYou only have to specify the name of Python module file to export to via\n #|default_exp &lt;name&gt;\nThen, you can a export a Juptyer Notebook cell by simply prepending\n #|export\nto it.\n\n\n\n\n\n\nImportant\n\n\n\nTo avoid a small conflict between Quarto and nbdev, make sure to add a space, , before the nbdev directives #|default_exp &lt;name&gt; and #|export. See here for details.\n\n\n… Shows an example\n\nfrom _code.HeavyComputations import noisy_predprey_model\n\n\nnp.random.seed(42)\n\npreys, predators = noisy_predprey_model(0.1, 0.1, 0.1, 0.01, 1.0, 1.0, 1000, 0.0)\nplt.plot(preys, lw=3, ls='--', label=\"preys\", color='blue', alpha=0.8) \nplt.plot(predators, lw=3, ls='--', label=\"predators\", color='orange', alpha=0.8)\n\nfor _ in range(35):\n    preys, predators = noisy_predprey_model(0.1, 0.1, 0.1, 0.01, 1.0, 1.0, 1000, 0.025)\n    plt.plot(preys, color='blue', alpha=0.1)\n    plt.plot(predators, color='orange', alpha=0.1)\nplt.legend();",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Computational writing</span>"
+    ]
+  },
+  {
+    "objectID": "003ComputationalWriting.html#footnotes",
+    "href": "003ComputationalWriting.html#footnotes",
+    "title": "3  Computational writing",
+    "section": "",
+    "text": "https://nbdev.fast.ai/↩︎\nhttps://wbarfuss.github.io/pyCRLD/ and https://github.com/wbarfuss/pyCRLD↩︎\nhttps://nbdev.fast.ai/getting_started.html↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Computational writing</span>"
+    ]
+  },
+  {
+    "objectID": "HeavyComputations.html",
+    "href": "HeavyComputations.html",
+    "title": "4  Annex: Heavy computations",
+    "section": "",
+    "text": "# Imports for the nbdev development environment\nimport nbdev\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\ndata = np.random.randn(2, 100)\nplt.scatter(*data);\n\n\n\n\n\n\n\nFigure 4.1\n\n\n\n\n\n\n #| default_exp HeavyComputations\n\n\n #| export\nimport numpy as np\n\n\n #| export\ndef noisy_predprey_model(prey_birth_rate, \n                         prey_mortality, \n                         predator_efficiency, \n                         predator_death_rate,\n                         initial_prey, \n                         initial_predators,\n                         time_length,\n                         noiselevel):\n    \"\"\" Discrete-time predator-prey model. \"\"\"\n    x = -1 * np.ones(time_length)\n    y = -1 * np.ones(time_length)\n    x[0] = initial_prey\n    y[0] = initial_predators\n    for t in range(1, time_length):\n        x[t] = x[t-1] + prey_birth_rate * x[t-1]\\\n            - prey_mortality * y[t-1]*x[t-1]\n        y[t] = y[t-1] + predator_efficiency * y[t-1]*x[t-1]\\\n            - predator_death_rate * y[t-1]\\\n            + noiselevel * (0.5 - np.random.rand())\n    return x, y\n\n\nnp.random.seed(42)\n\npreys, predators = noisy_predprey_model(0.1, 0.1, 0.1, 0.01, 1.0, 1.0, 1000, 0.0)\nplt.plot(preys, lw=3, ls='--', label=\"preys\", color='blue', alpha=0.8) \nplt.plot(predators, lw=3, ls='--', label=\"predators\", color='orange', alpha=0.8)\n\nfor _ in range(35):\n    preys, predators = noisy_predprey_model(0.1, 0.1, 0.1, 0.01, 1.0, 1.0, 1000, \n                                            0.025)\n    \n    plt.plot(preys, color='blue', alpha=0.1) \n    plt.plot(predators, color='orange', alpha=0.1)\nplt.legend(); \n\n\n\n\n\n\n\n\n\nnbdev.export.nb_export(\"HeavyComputations.ipynb\", \"_code\")",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Annex: Heavy computations</span>"
+    ]
+  }
+]
