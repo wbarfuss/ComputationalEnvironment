@@ -10,11 +10,11 @@
     ]
   },
   {
-    "objectID": "index.html#tools-how-do-we-get-it",
-    "href": "index.html#tools-how-do-we-get-it",
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
     "title": "Hitchhikers guide to transparent, reproducible, and collaborative computational science",
-    "section": "Tools: How do we get it?",
-    "text": "Tools: How do we get it?\n\nJupyter notebooks\nquarto\nnbdev\nJupyter lab (extensions)\ngit & github",
+    "section": "",
+    "text": "https://www.nature.com/collections/prbfkwmwvz↩︎",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why this guide?</span>"
     ]

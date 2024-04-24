@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Wolfram Barfuss">
-<meta name="dcterms.date" content="2024-04-23">
+<meta name="dcterms.date" content="2024-04-24">
 
 <title>Hitchhikers guide to transparent, reproducible, and collaborative computational science</title>
 <style>
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#science-as-amateur-software-development" id="toc-science-as-amateur-software-development" class="nav-link active" data-scroll-target="#science-as-amateur-software-development">Science as amateur software development</a></li>
-  <li><a href="#elements" id="toc-elements" class="nav-link" data-scroll-target="#elements">Elements</a></li>
+  <li><a href="#this-guide" id="toc-this-guide" class="nav-link" data-scroll-target="#this-guide">This guide</a></li>
   <li><a href="#what-do-we-want" id="toc-what-do-we-want" class="nav-link" data-scroll-target="#what-do-we-want">What do we want?</a></li>
   <li><a href="#tools-how-do-we-get-it" id="toc-tools-how-do-we-get-it" class="nav-link" data-scroll-target="#tools-how-do-we-get-it">Tools: How do we get it?</a></li>
   </ul>
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 23, 2024</p>
+      <p class="date">April 24, 2024</p>
     </div>
   </div>
   
@@ -182,49 +182,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>What is this?</p>
 <section id="science-as-amateur-software-development" class="level3">
 <h3 class="anchored" data-anchor-id="science-as-amateur-software-development">Science as amateur software development</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://yewtu.be/watch?v=zwRdO9_GGhY"><img src="https://img.youtube.com/vi/zwRdO9_GGhY/0.jpg" class="img-fluid figure-img" alt="Everything Is AWESOME"></a></p>
-<figcaption>Everything Is AWESOME</figcaption>
-</figure>
-</div>
 <blockquote class="blockquote">
-<p>Science is one of humanity’s greatest inventions. Academia, on the other hand, is not. It is remarkable how successful science has been, given the often chaotic habits of scientists. In contrast to other fields, like say landscaping or software engineering, science as a profession is largely <em>unprofessional</em>—apprentice scientists are taught less about how to work responsibly than about how to earn promotions. This results in ubiquitous and costly errors. Software development has become indispensable to scientific work. I want to playfully ask how it can become even more useful by transferring some aspects of its professionalism, the day-to-day tracking and back-tracking and testing that is especially part of distributed, open-source software development. Science, after all, aspires to be distributed, open-source knowledge development.</p>
+<p>Science is one of humanity’s greatest inventions. Academia, on the other hand, is not. It is remarkable how successful science has been, given the often chaotic habits of scientists. In contrast to other fields, […] science as a profession is largely <em>unprofessional</em>—apprentice scientists are taught less about how to work responsibly than about how to earn promotions. This results in ubiquitous and costly errors.</p>
 </blockquote>
+<blockquote class="blockquote">
+<p>Software development has become indispensable to scientific work. [But] it can become even more useful by transferring some aspects of its professionalism, the day-to-day tracking and back-tracking and testing that is especially part of distributed, open-source software development. <strong>Science, after all, aspires to be distributed, open-source knowledge development.</strong> – <cite>Richard McElreath</cite></p>
+</blockquote>
+<p><a href="https://yewtu.be/watch?v=zwRdO9_GGhY"><img src="https://img.youtube.com/vi/zwRdO9_GGhY/0.jpg" class="img-fluid"></a></p>
 </section>
-<section id="elements" class="level3">
-<h3 class="anchored" data-anchor-id="elements">Elements</h3>
-<ul>
-<li>Computational sciences develop models and analyze data.</li>
-<li>Transparency</li>
-<li>Reproducible</li>
-<li>Collaborative</li>
-</ul>
-<hr>
-<ul>
-<li>It is a hitchhiker’s guide because many of the elements we use are very common practices. We don’t need to drive ourselves.</li>
-</ul>
+<section id="this-guide" class="level3">
+<h3 class="anchored" data-anchor-id="this-guide">This guide</h3>
+<p>In this guide, I want to outline <strong>my approach to science as amateur software development</strong>. I am a computational social ecologist who focuses on developing theoretical models of human-environment interactions. However, the tools and methods shown here should apply to the broad range of <strong>computational sciences</strong>, which all <strong>develop models and analyze data</strong> to some extent.</p>
+<p><strong>Transparency</strong> is required <strong>because all models are wrong</strong>. Our brains have limited capacity to process the already limited data we receive from the complex world around us, so we simplify. Most often, we do this subconsciously, resulting in a mental model. We use formal models – computational and mathematical ones – to make the process of simplification and abstraction a conscious effort. Since a model, by definition, can nor aims to be true, we should optimize the model design and presentation for transparency to <strong>make the conscious modeling thought process a collective one</strong>. Transparency enables reproducibility and collaboration.</p>
+<p><strong>If science is not reproducible, it is not science.</strong> However, the reproducibility crisis <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> shows that many scientific study results are difficult or impossible to reproduce. This undermines the credibility of scientific knowledge and can lead to costly and inefficient policies.</p>
+<p><strong>Collaboration</strong> is required <strong>because the world is too complex</strong> for any individual to do it all by themselves. We need to be able to integrate different perspectives of one phenomenon.</p>
+<p>Luckily, (open-source) software development has not only produced a set of modern software tools to realize these principles. It also provides a range of cultural practices to enable the continuous integration of knowledge collaboratively. We don’t need to invent new tools or practices. We just need to be willing to learn. In that sense, this guide is <strong>a hitchhiker’s guide</strong>. We don’t need to drive all by ourselves. We just have to find the right companions (tools and practices) to make the journey worthwhile and enjoyable.</p>
 </section>
-<section id="what-do-we-want" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="what-do-we-want">What do we want?</h3>
+<section id="what-do-we-want" class="level3">
+<h3 class="anchored" data-anchor-id="what-do-we-want">What do we want?</h3>
+<blockquote class="blockquote">
+<p>An integrated computational environment for development, analysis, and writing.</p>
+</blockquote>
 <ul>
 <li>Publications (as a PDF, on the web, with images)
 <ul>
 <li>Cross-referencing</li>
 <li>Citations</li>
 </ul></li>
-<li>Execute and reuse code</li>
-<li>Presentations</li>
+<li>Execute, reuse, and document code</li>
+<li>Version control</li>
 <li>Unit tests</li>
 <li>Animations</li>
-<li>Version control</li>
+<li>Presentations</li>
 </ul>
 </section>
-<section id="tools-how-do-we-get-it" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="tools-how-do-we-get-it">Tools: How do we get it?</h2>
+<section id="tools-how-do-we-get-it" class="level3">
+<h3 class="anchored" data-anchor-id="tools-how-do-we-get-it">Tools: How do we get it?</h3>
 <ul>
 <li>Jupyter notebooks</li>
 <li>quarto</li>
@@ -232,8 +227,27 @@ ul.task-list li input[type="checkbox"] {
 <li>Jupyter lab (extensions)</li>
 <li>git &amp; github</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is work in progress. More to come.</p>
+</div>
+</div>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>https://www.nature.com/collections/prbfkwmwvz<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
